@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <button id="help">?</button>
+            <div class="config">
+                <button id="more-tries">Plus d’essais</button>
+                <button id="less-tries">Moins d’essais</button>
+            </div>
+            <h1>Wordle</h1>
+            <div class="config">
+                <button id="more-letters">Plus de lettres</button>
+                <button id="less-letters">Moins de lettres</button>
+            </div>
+        </header>
+        <div id="guesses"></div>
+        <div id="game-over" class="hidden">
+            <a id="wiki" href="" target="_blank">Qu’est-ce que c’est ?</a>
+            <button id="restart">Rejouer</button>
+        </div>
+        <div id="keyboard"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

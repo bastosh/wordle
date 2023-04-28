@@ -1,0 +1,173 @@
+body {
+  color: #ffffff;
+  background-color: #121213;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#app {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#help {
+  position: absolute;
+  font-size: 18px;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: #121213;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 100px;
+}
+
+#help:hover {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0 30px;
+  width: 510px;
+  text-align: center;
+  border-bottom: 1px solid #c1c1c3;
+  padding-bottom: 16px;
+}
+
+.config {
+  display: flex;
+  flex-direction: column;
+}
+
+.config button {
+  font-size: 13px;
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background-color: #818384;
+  color: #e1e1e4;
+  margin: 4px;
+}
+
+.config button:hover {
+  cursor: pointer;
+}
+
+#guesses {
+  margin-bottom: 20px;
+}
+
+#guesses div {
+  display: flex;
+}
+
+#guesses .letter {
+  width: 62px;
+  height: 62px;
+  border: 2px solid #3a3a3c;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2px;
+  font-size: 20px;
+}
+
+.letter.flip {
+  animation: 0.5s linear flipping;
+}
+
+@keyframes flipping {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+#keyboard {
+  width: 510px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#keyboard button {
+  width: 43px;
+  height: 58px;
+  border-radius: 4px;
+  border: none;
+  background-color: #818384;
+  color: #ffffff;
+  margin: 4px;
+}
+
+#keyboard button:hover {
+  cursor: pointer;
+}
+
+#keyboard button:nth-child(21),
+#keyboard button:nth-child(28) {
+  width: 94px;
+}
+
+.grey-overlay {
+  background-color: #3a3a3c !important;
+  border: none !important;
+}
+
+.yellow-overlay {
+  background-color: #b59f3a !important;
+  border: none !important;
+}
+
+.green-overlay {
+  background-color: #538d4e !important;
+  border: none !important;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#game-over {
+  width: 325px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+#restart {
+  font-size: 13px;
+  width: 120px;
+  height: 30px;
+  border-radius: 4px;
+  border: none;
+  background-color: #818384;
+  color: #e1e1e4;
+}
+
+#restart:hover {
+  cursor: pointer;
+}
+
+#wiki {
+  color: #ffffff;
+}
