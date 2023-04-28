@@ -2,6 +2,7 @@
 /*----------------
 /     CONFIG
 -----------------*/
+const apiUrl = 'https://give-me-a-word.fly.dev/api'
 const maxTries = 8;
 const minTries = 1;
 const maxLetters = 12;
@@ -74,7 +75,7 @@ const keys = [
 /    SET GAME
 -----------------*/
 const getWordle = () => {
-    fetch(`http://words.test/api/random?min=${wordLength}&max=${wordLength}`)
+    fetch(`${apiUrl}/random?min=${wordLength}&max=${wordLength}`)
         .then(response => response.json())
         .then(response => {
         wordle = response.data.toUpperCase();
@@ -192,7 +193,7 @@ const checkGuess = () => {
     if (currentGuess.length === wordLength && guesses.length < tries) {
         const guess = currentGuess.join('').toLowerCase();
         triedWords.push(guess);
-        fetch(`http://words.test/api/search/${guess}`)
+        fetch(`${apiUrl}/search/${guess}`)
             .then(response => response.json())
             .then(response => {
             if (response.data === true) {
@@ -402,7 +403,7 @@ const getHint = () => {
             console.log('good positions: ', goodPositions);
             console.log('bad positions: ', wrongPositions);
         }
-        fetch(`http://words.test/api/search?min=${wordLength}&max=${wordLength}&start=${startsWith}&end=${endsWith}&contains=${contains}&excludes=${excludes}&good=${goodPositions}&bad=${wrongPositions}&hint=1`)
+        fetch(`${apiUrl}/search?min=${wordLength}&max=${wordLength}&start=${startsWith}&end=${endsWith}&contains=${contains}&excludes=${excludes}&good=${goodPositions}&bad=${wrongPositions}&hint=1`)
             .then(response => response.json())
             .then(response => {
             console.log(response.data);
